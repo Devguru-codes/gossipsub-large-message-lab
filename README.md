@@ -35,6 +35,32 @@ python -m gossipsub_large_msg_lab simulate examples/basic-scenario.json --markdo
 python -m gossipsub_large_msg_lab security-matrix
 ```
 
+## Docker
+
+Build the optimized CLI image:
+
+```powershell
+docker build -t gossipsub-large-message-lab .
+```
+
+Run the bundled example scenario:
+
+```powershell
+docker run --rm gossipsub-large-message-lab simulate examples/basic-scenario.json --markdown
+```
+
+Inspect payload segmentation:
+
+```powershell
+docker run --rm gossipsub-large-message-lab segment --text "hello large pubsub" --segment-size 5
+```
+
+Generate the security matrix:
+
+```powershell
+docker run --rm gossipsub-large-message-lab security-matrix
+```
+
 ## Project layout
 
 ```text

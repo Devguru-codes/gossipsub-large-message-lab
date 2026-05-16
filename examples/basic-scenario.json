@@ -1,0 +1,16 @@
+{
+  "peer_count": 12,
+  "mesh_degree": 3,
+  "segment_size": 512,
+  "payload_size": 4096,
+  "fanout": 3,
+  "loss_rate": 0.02,
+  "duplicate_rate": 0.05,
+  "churn_rate": 0.0,
+  "min_latency_ms": 5,
+  "max_latency_ms": 40,
+  "max_rounds": 1000,
+  "seed": 7,
+  "topic": "large-messages",
+  "publisher": "peer-0"
+}

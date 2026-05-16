@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=65"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gossipsub-large-msg-lab"
+version = "0.1.0"
+description = "Research toolkit for modeling Gossipsub 1.4 large-message segmentation, propagation, and reassembly."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name = "Gossipsub Large Message Lab contributors" }
+]
+dependencies = [
+  "typer>=0.9,<1.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8",
+  "ruff>=0.12"
+]
+
+[project.scripts]
+gossipsub-large-msg-lab = "gossipsub_large_msg_lab.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501", "UP045"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["gossipsub_large_msg_lab"]
